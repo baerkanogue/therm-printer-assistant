@@ -94,7 +94,7 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>230</y>
+      <y>250</y>
       <width>21</width>
       <height>41</height>
      </rect>
@@ -107,7 +107,7 @@
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>270</y>
+      <y>290</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -135,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>230</y>
+      <y>250</y>
       <width>58</width>
       <height>41</height>
      </rect>
@@ -148,7 +148,7 @@
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>270</y>
+      <y>290</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -186,7 +186,7 @@
    <widget class="QLabel" name="dpi_label">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>470</x>
       <y>140</y>
       <width>81</width>
       <height>31</height>
@@ -200,7 +200,7 @@
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>310</y>
+      <y>330</y>
       <width>151</width>
       <height>32</height>
      </rect>
@@ -248,39 +248,26 @@
      <string>Choose</string>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="dpi_spin_box">
+   <widget class="QDoubleSpinBox" name="width_spin_box">
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>140</y>
-      <width>61</width>
+      <y>175</y>
+      <width>71</width>
       <height>32</height>
      </rect>
     </property>
     <property name="accelerated">
      <bool>true</bool>
     </property>
-    <property name="decimals">
-     <number>2</number>
-    </property>
     <property name="singleStep">
      <double>0.010000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="width_spin_box">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>175</y>
-      <width>61</width>
-      <height>32</height>
-     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="width_label">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>470</x>
       <y>180</y>
       <width>81</width>
       <height>21</height>
@@ -288,6 +275,19 @@
     </property>
     <property name="text">
      <string>Paper Width</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="dpi_spin_box">
+    <property name="geometry">
+     <rect>
+      <x>391</x>
+      <y>140</y>
+      <width>71</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999</number>
     </property>
    </widget>
   </widget>

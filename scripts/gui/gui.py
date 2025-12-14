@@ -13,6 +13,7 @@ class GuiHandler:
         self.status_label: qtui.QtWidgets.QLabel
         self.working_img: hp.ImageData = hp.ImageData()
         self.output_dir: str
+        self.config: hp.Config
 
         self._gui_init()
         self._connect()
@@ -33,9 +34,14 @@ class GuiHandler:
             stat.addPermanentWidget(self.status_label)
 
         try:
-            self.ui.dpi_spin_box.setValue(hp.parse_cfg_for_width())
+            self.config = hp.parse_cfg()
         except Exception as error:
-            self.status_label.setText(f"config.cgf error: {error}")
+            self.status_label.setText(f"config.cfg error: {error}")
+
+        if self.config:
+            print(self.config.dpi, self.config.width)
+            self.ui.dpi_spin_box.setValue(self.config.dpi)
+            self.ui.width_spin_box.setValue(self.config.width)
 
     def _connect(self) -> None:
         self.ui.save_button.pressed.connect(self._on_save_button_pressed)
@@ -44,7 +50,12 @@ class GuiHandler:
         self.ui.choose_button.pressed.connect(self._on_choose_button_pressed)
 
     def _on_preview_button_pressed(self) -> None:
-        self._get_queued_process()
+        proc: hp.QueuedProcess | None = self._get_queued_process()
+        if not proc:
+            return
+        self.working_img.img = hp.process_image(self.working_img.origin_img, proc)
+        self.working_img.img.save("img.png")
+        gui.ui.image_frame.setPixmap(qtui.QtGui.QPixmap("img.png"))
 
     def _on_open_button_pressed(self) -> None:
         file_str: str
@@ -130,10 +141,11 @@ class GuiHandler:
             return
 
         brightness: float = self.ui.brightness_spin_box.value()
-        dpi: float = self.ui.brightness_spin_box.value()
+        dpi: int = self.ui.dpi_spin_box.value()
+        width: float = self.ui.width_spin_box.value()
 
         process: hp.QueuedProcess = hp.QueuedProcess(
-            use_dither, use_landscape, brightness, dpi
+            use_dither, use_landscape, brightness, width, dpi
         )
 
         return process
