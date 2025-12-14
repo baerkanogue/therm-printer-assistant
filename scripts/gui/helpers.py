@@ -11,6 +11,7 @@ class ImageData:
         self.img: Image.Image
         self.path: str
         self.origin_img: Image.Image
+        self.tmp: str
 
 
 class QueuedProcess:
@@ -48,7 +49,7 @@ def process_image(img: Image.Image, proc: QueuedProcess) -> Image.Image:
         convert_image_width(proc_img, proc.width, proc.dpi, proc.use_landcape)
     )
 
-    brightn_enhance: ImageEnhance.Brightness = ImageEnhance.Brightness(img)
+    brightn_enhance: ImageEnhance.Brightness = ImageEnhance.Brightness(proc_img)
     proc_img = brightn_enhance.enhance(proc.brightness / 100)
 
     if proc.use_dither:
