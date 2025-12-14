@@ -116,10 +116,10 @@
    <widget class="QCheckBox" name="dither_check_box">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>290</y>
+      <x>390</x>
+      <y>250</y>
       <width>21</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -157,8 +157,8 @@
    <widget class="QLabel" name="dither_label">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>290</y>
+      <x>420</x>
+      <y>250</y>
       <width>58</width>
       <height>31</height>
      </rect>
@@ -231,6 +231,32 @@
     <property name="text">
      <string>DPI</string>
     </property>
+   </widget>
+   <widget class="QComboBox" name="landscape_combo_box">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>290</y>
+      <width>151</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="currentText">
+     <string>landscape</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>landscape</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>portrait</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

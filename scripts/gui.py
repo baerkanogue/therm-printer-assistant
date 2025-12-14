@@ -1,34 +1,35 @@
-type: ignore[attr - defined]
-
 import sys
-from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow
-from os.path import join
+import qtui
 
 
-class MainWindow(QMainWindow):
+class GuiHandler:
     def __init__(self) -> None:
-        super().__init__()
-        self.initialization()
-        self.config()
-
-    def config(self) -> None:
-        self.save_button.clicked.connect(self.on_run)
-
-    def initialization(self) -> None:
-        self.setWindowTitle("Printer")
-        ui_path = join("qt", "main.ui")
-        uic.loadUi(ui_path, self)
-
-    def on_run(self) -> None:
-        print("Button clicked")
+        self.app: qtui.QtWidgets.QApplication
+        self.window: qtui.QtWidgets.QMainWindow
+        self.ui: qtui.Ui_PrinterGUI
 
 
 def main() -> None:
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+    gui: GuiHandler = gui_init()
+
+    gui.ui.image_frame.setPixmap(qtui.QtGui.QPixmap("samples/sample.jpg"))
+
+    run(gui)
+
+
+def gui_init() -> GuiHandler:
+    gui: GuiHandler = GuiHandler()
+    gui.app = qtui.QtWidgets.QApplication(sys.argv)
+    gui.window = qtui.QtWidgets.QMainWindow()
+
+    gui.ui = qtui.Ui_PrinterGUI()
+    gui.ui.setupUi(gui.window)
+    return gui
+
+
+def run(gui: GuiHandler):
+    gui.window.show()
+    sys.exit(gui.app.exec())
 
 
 if __name__ == "__main__":
