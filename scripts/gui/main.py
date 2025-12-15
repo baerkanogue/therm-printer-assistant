@@ -1,9 +1,9 @@
 import sys
-import ui_main as uim
 import info
 import helpers as hp
-from os.path import join
+import ui_main as uim
 from os import remove
+from os.path import join
 
 
 class GuiHandler:
