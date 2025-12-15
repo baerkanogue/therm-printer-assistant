@@ -72,7 +72,7 @@ pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" main.py
 ### Windows
 #### GUI:
 ```powershell
-pyinstaller --onefile --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" scripts\gui\main.py
+pyinstaller --onefile --noconsole --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" scripts\gui\main.py
 ```
 
 #### TUI:
