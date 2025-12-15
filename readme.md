@@ -25,15 +25,20 @@ ___
 ## Building
 
 ### Dependencies
-- altgraph
-- colorama
+#### GUI:
 - packaging
 - pillow
-- pyinstaller
-- pyinstaller-hooks-contrib
 - PyQt6
 - PyQt6-Qt6
-- PyQt6_sip
+- PyQt6_sip  
+
+#### TUI:
+- colorama
+
+#### Build:
+- altgraph
+- pyinstaller
+- pyinstaller-hooks-contrib
 - setuptools
 
 #### Linux
@@ -65,6 +70,7 @@ pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" main.py
 
 
 ### Windows
+#### GUI:
 ```powershell
 pyinstaller --onefile --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" scripts\gui\main.py
 ```
@@ -75,7 +81,7 @@ pyinstaller --onefile --icon=icons\printer.ico --name "ThermPrinter_Assistant_TU
 ```
 
 
-### Other
+### Misc
 #### CM -> INCHES CONVERTER:
 ```bash
 pyinstaller --onefile --name "cm_inch_converter" cm_inch_convert.py
