@@ -30,7 +30,7 @@ Example:
 
 [Settings]
 PRINTER_DPI = 203
-PAPER_WIDTH = 2.28
+PAPER_WIDTH = 2.2
 
 If the configuration file is missing or invalid, the required values must be entered manually each time the application is executed.
 
