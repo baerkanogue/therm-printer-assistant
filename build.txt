@@ -1,5 +1,12 @@
 [LINUX]
-pyinstaller --onefile --add-data "samples\sample.jpg:samples" --add-data "icons/printer.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
+GUI:
+pyinstaller --onefile --add-data "samples/sample.jpg:samples" --add-data "icons/printer.ico:icons" --add-data "icons/logo.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
+
+TUI:
+pyinstaller --onefile --icon=icons/printer.ico --name "ThermPrinter_Assistant_TUI" main.py     
+
+CONVERTER:
+pyinstaller --onefile --name "cm_inch_converter" cm_inch_convert.py
 
 [WINDOWS]
 pyinstaller --onefile --add-data "samples\sample.jpg;samples" --add-data "icons\printer.ico;icons" --name "ThermPrinter_Assistant" scripts\gui\main.py

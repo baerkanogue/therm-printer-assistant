@@ -18,12 +18,18 @@
     <rect>
      <x>220</x>
      <y>20</y>
-     <width>161</width>
+     <width>141</width>
      <height>261</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../Downloads/logo.ico</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="info_label">
@@ -40,6 +46,9 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+   </property>
+   <property name="openExternalLinks">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

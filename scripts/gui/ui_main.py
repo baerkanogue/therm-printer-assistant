@@ -84,6 +84,9 @@ class Ui_PrinterGUI(object):
         self.dpi_spin_box.setGeometry(QtCore.QRect(391, 140, 71, 32))
         self.dpi_spin_box.setMaximum(999)
         self.dpi_spin_box.setObjectName("dpi_spin_box")
+        self.info_button = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.info_button.setGeometry(QtCore.QRect(530, 420, 21, 21))
+        self.info_button.setObjectName("info_button")
         PrinterGUI.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=PrinterGUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 563, 30))
@@ -100,20 +103,14 @@ class Ui_PrinterGUI(object):
     def retranslateUi(self, PrinterGUI):
         _translate = QtCore.QCoreApplication.translate
         PrinterGUI.setWindowTitle(_translate("PrinterGUI", "MainWindow"))
-        self.file_path_line.setPlaceholderText(
-            _translate("PrinterGUI", "Enter file path...")
-        )
+        self.file_path_line.setPlaceholderText(_translate("PrinterGUI", "Enter file path..."))
         self.preview_button.setText(_translate("PrinterGUI", "PREVIEW"))
-        self.output_path_line.setPlaceholderText(
-            _translate("PrinterGUI", "Enter output path...")
-        )
+        self.output_path_line.setPlaceholderText(_translate("PrinterGUI", "Enter output path..."))
         self.brightness_spin_box.setSpecialValueText(_translate("PrinterGUI", "%"))
         self.dither_label.setText(_translate("PrinterGUI", "Dither"))
         self.brightness_label.setText(_translate("PrinterGUI", "% Brightness"))
         self.save_button.setText(_translate("PrinterGUI", "SAVE"))
-        self.output_name_line.setPlaceholderText(
-            _translate("PrinterGUI", "Enter output name...")
-        )
+        self.output_name_line.setPlaceholderText(_translate("PrinterGUI", "Enter output name..."))
         self.dpi_label.setText(_translate("PrinterGUI", "DPI"))
         self.landscape_combo_box.setCurrentText(_translate("PrinterGUI", "landscape"))
         self.landscape_combo_box.setItemText(0, _translate("PrinterGUI", "landscape"))
@@ -121,11 +118,11 @@ class Ui_PrinterGUI(object):
         self.open_button.setText(_translate("PrinterGUI", "Open"))
         self.choose_button.setText(_translate("PrinterGUI", "Choose"))
         self.width_label.setText(_translate("PrinterGUI", "Paper Width"))
+        self.info_button.setText(_translate("PrinterGUI", "i"))
 
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     PrinterGUI = QtWidgets.QMainWindow()
     ui = Ui_PrinterGUI()
