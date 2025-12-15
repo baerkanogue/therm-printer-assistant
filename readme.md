@@ -54,13 +54,13 @@ pip install -r requirements.txt
 ### Linux
 #### GUI:
 ```bash
-pyinstaller --onefile --icon=icons/printer3d.ico --add-data "samples/sample.jpg:samples" --add-data "icons/printer3d.ico:icons" --add-data "icons/logo.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
+pyinstaller --onefile --add-data "samples/sample.jpg:samples" --add-data "icons/printer3d.ico:icons" --add-data "icons/logo.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
 ```
 
 
 #### TUI:
 ```bash
-pyinstaller --onefile --icon=icons/printer.ico --name "ThermPrinter_Assistant_TUI" main.py     
+pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" main.py     
 ```
 
 
@@ -77,7 +77,7 @@ pyinstaller --onefile --icon=icons\printer.ico --name "ThermPrinter_Assistant_TU
 
 
 ### Other
-#### CONVERTER:
+#### CM -> INCHES CONVERTER:
 ```bash
 pyinstaller --onefile --name "cm_inch_converter" cm_inch_convert.py
 ```
