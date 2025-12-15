@@ -61,30 +61,32 @@ pip install -r requirements.txt
 pyinstaller --onefile --add-data "samples/sample.jpg:samples" --add-data "icons/printer3d.ico:icons" --add-data "icons/logo.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
 ```
 
-
 #### TUI:
 ```bash
-pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" main.py     
+pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" scripts/tui/main.py     
 ```
 
+#### CM -> INCHES CONVERTER:
+```bash
+pyinstaller --onefile --name "cm_inch_converter" scripts/cm_inch_convert.py
+```
 
 
 ### Windows
 #### GUI:
 ```powershell
-pyinstaller --onefile --noconsole --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" scripts\gui\main.py
+pyinstaller --onefile --noconsole --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" .\scripts\gui\main.py
 ```
 
 #### TUI:
 ```powershell
-pyinstaller --onefile --icon=icons\printer.ico --name "ThermPrinter_Assistant_TUI" main.py     
+pyinstaller --onefile --icon=icons\printer2d.ico --name "ThermPrinter_Assistant_TUI" .\scripts\tui\main.py     
 ```
 
-
-### Misc
 #### CM -> INCHES CONVERTER:
-```bash
-pyinstaller --onefile --name "cm_inch_converter" cm_inch_convert.py
+```powershell
+pyinstaller --onefile --name "cm_inch_converter" .\scripts\cm_inch_convert.py
 ```
+
 
 
