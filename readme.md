@@ -53,7 +53,7 @@ pip install -r requirements.txt
 #### Windows
 ```bash
 py -m venv .venv
-.\.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
