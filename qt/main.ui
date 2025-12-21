@@ -93,8 +93,8 @@
    <widget class="QCheckBox" name="dither_check_box">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>250</y>
+      <x>390</x>
+      <y>330</y>
       <width>21</width>
       <height>41</height>
      </rect>
@@ -107,7 +107,7 @@
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>290</y>
+      <y>260</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -134,9 +134,9 @@
    <widget class="QLabel" name="dither_label">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>250</y>
-      <width>58</width>
+      <x>417</x>
+      <y>330</y>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
@@ -148,7 +148,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>290</y>
+      <y>260</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -205,7 +205,7 @@
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>330</y>
+      <y>300</y>
       <width>151</width>
       <height>32</height>
      </rect>
@@ -237,7 +237,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Open</string>
+     <string>Open File</string>
     </property>
    </widget>
    <widget class="QPushButton" name="choose_button">
@@ -250,14 +250,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>Choose</string>
+     <string>Select Folder</string>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="width_spin_box">
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>175</y>
+      <y>180</y>
       <width>71</width>
       <height>32</height>
      </rect>
@@ -275,7 +275,7 @@
       <x>470</x>
       <y>180</y>
       <width>81</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -285,7 +285,7 @@
    <widget class="QSpinBox" name="dpi_spin_box">
     <property name="geometry">
      <rect>
-      <x>391</x>
+      <x>390</x>
       <y>140</y>
       <width>71</width>
       <height>32</height>
@@ -306,6 +306,52 @@
     </property>
     <property name="text">
      <string>i</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="contrast_spin_box">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>220</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="specialValueText">
+     <string>%</string>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <double>999.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>100.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="contrast_label">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>220</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>% Contrast</string>
     </property>
    </widget>
   </widget>

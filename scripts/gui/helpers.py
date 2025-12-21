@@ -18,17 +18,19 @@ class ImageData:
 class QueuedProcess:
     def __init__(
         self,
-        use_dither: bool,
-        use_landscape: bool,
-        brightness: float,
-        width: float,
         dpi: int,
+        width: float,
+        contrast: float,
+        brightness: float,
+        use_landscape: bool,
+        use_dither: bool,
     ) -> None:
+        self.dpi: int = dpi
+        self.width: float = width
+        self.contrast: float = contrast
         self.brightness: float = brightness
         self.use_landcape: bool = use_landscape
         self.use_dither: bool = use_dither
-        self.dpi: int = dpi
-        self.width: float = width
 
 
 class Config:
@@ -49,6 +51,9 @@ def process_image(img: Image.Image, proc: QueuedProcess) -> Image.Image:
     proc_img = proc_img.resize(
         convert_image_width(proc_img, proc.width, proc.dpi, proc.use_landcape)
     )
+
+    contrast_enhance: ImageEnhance.Contrast = ImageEnhance.Contrast(proc_img)
+    proc_img = contrast_enhance.enhance(proc.contrast / 100)
 
     brightn_enhance: ImageEnhance.Brightness = ImageEnhance.Brightness(proc_img)
     proc_img = brightn_enhance.enhance(proc.brightness / 100)

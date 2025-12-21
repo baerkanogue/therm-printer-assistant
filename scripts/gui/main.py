@@ -76,7 +76,13 @@ class GuiHandler:
             self.working_img.tmp = ".tmp.png"
 
             self.working_img.img.save(self.working_img.tmp)
-            gui.ui.image_frame.setPixmap(uim.QtGui.QPixmap(self.working_img.tmp))
+            tmp_img = uim.QtGui.QPixmap(self.working_img.tmp)
+            scaled = tmp_img.scaled(
+                self.ui.image_frame.size(),
+                uim.QtCore.Qt.AspectRatioMode.IgnoreAspectRatio,
+                uim.QtCore.Qt.TransformationMode.FastTransformation,
+            )
+            gui.ui.image_frame.setPixmap(scaled)
 
             try:
                 remove(self.working_img.tmp)
@@ -174,12 +180,13 @@ class GuiHandler:
             self.status_label.setText(f"Landscape mode error, value: {landscape_str}")
             return
 
-        brightness: float = self.ui.brightness_spin_box.value()
         dpi: int = self.ui.dpi_spin_box.value()
         width: float = self.ui.width_spin_box.value()
+        contrast: float = self.ui.contrast_spin_box.value()
+        brightness: float = self.ui.brightness_spin_box.value()
 
         process: hp.QueuedProcess = hp.QueuedProcess(
-            use_dither, use_landscape, brightness, width, dpi
+            dpi, width, contrast, brightness, use_landscape, use_dither
         )
 
         return process
