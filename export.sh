@@ -16,7 +16,7 @@ cp license.md export/misc/license.md
 cp portable_readme.txt export/misc/readme.txt
 
 cd export
-tar -czvf ThermPrinter_Assistant_linux_VERSION.tar.gz .
+tar -czvf TPA_linux_VERSION.tar.gz .
 cd -
 
 echo export preparations done
