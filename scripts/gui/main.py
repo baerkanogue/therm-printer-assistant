@@ -76,13 +76,13 @@ class GuiHandler:
             self.working_img.tmp = ".tmp.png"
 
             self.working_img.img.save(self.working_img.tmp)
-            tmp_img = uim.QtGui.QPixmap(self.working_img.tmp)
-            scaled = tmp_img.scaled(
+            tmp_img: uim.QtGui.QPixmap = uim.QtGui.QPixmap(self.working_img.tmp)
+            tmp_img = tmp_img.scaled(
                 self.ui.image_frame.size(),
                 uim.QtCore.Qt.AspectRatioMode.IgnoreAspectRatio,
                 uim.QtCore.Qt.TransformationMode.FastTransformation,
             )
-            gui.ui.image_frame.setPixmap(scaled)
+            gui.ui.image_frame.setPixmap(tmp_img)
 
             try:
                 remove(self.working_img.tmp)

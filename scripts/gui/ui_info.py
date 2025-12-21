@@ -12,13 +12,20 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(400, 300)
-        self.logo_label = QtWidgets.QLabel(parent=Dialog)
-        self.logo_label.setGeometry(QtCore.QRect(220, 20, 141, 261))
-        self.logo_label.setText("")
-        self.logo_label.setPixmap(QtGui.QPixmap("qt/../../../Downloads/logo.ico"))
-        self.logo_label.setScaledContents(True)
-        self.logo_label.setObjectName("logo_label")
+        Dialog.resize(365, 300)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
+        Dialog.setSizePolicy(sizePolicy)
+        Dialog.setMinimumSize(QtCore.QSize(365, 300))
+        Dialog.setMaximumSize(QtCore.QSize(365, 300))
+        self.logo_frame = QtWidgets.QLabel(parent=Dialog)
+        self.logo_frame.setGeometry(QtCore.QRect(220, 20, 131, 261))
+        self.logo_frame.setText("")
+        self.logo_frame.setPixmap(QtGui.QPixmap("qt/../../../Downloads/logo.ico"))
+        self.logo_frame.setScaledContents(True)
+        self.logo_frame.setObjectName("logo_frame")
         self.info_label = QtWidgets.QLabel(parent=Dialog)
         self.info_label.setGeometry(QtCore.QRect(10, 20, 201, 261))
         self.info_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
@@ -31,7 +38,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.info_label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">ThermPrinter Assistant</span></p><p><br/></p><p align=\"center\"><span style=\" font-size:12pt;\">Made by baerkanogue</span></p><p align=\"center\"><span style=\" font-size:12pt;\"><br/>Link: </span><a href=\"https://github.com/Baerkanogue\"><span style=\" font-size:12pt; text-decoration: underline; color:#bec2f4;\">github</span></a></p><p align=\"center\"><br/></p><p align=\"center\"><br/><span style=\" font-size:12pt;\">License: MIT</span></p></body></html>"))
+        self.info_label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">ThermPrinter Assistant</span></p><p><span style=\" font-size:12pt;\"><br/></span></p><p align=\"center\"><span style=\" font-size:12pt;\">Made by baerkanogue<br/>Link: </span><a href=\"https://github.com/Baerkanogue\"><span style=\" font-size:12pt; text-decoration: underline; color:#bec2f4;\">github</span></a><span style=\" font-size:12pt;\"><br/></span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-size:12pt;\"><br/>License: MIT</span></p></body></html>"))
 
 
 if __name__ == "__main__":

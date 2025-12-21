@@ -10,4 +10,10 @@ class InfoWindow(uii.QtWidgets.QDialog):
 
         logo_path: Path = resource_path("icons/logo.ico")
         logo_icon: str = str(logo_path)
-        self.ui.logo_label.setPixmap(uii.QtGui.QPixmap(logo_icon))
+        logo_img: uii.QtGui.QPixmap = uii.QtGui.QPixmap(logo_icon)
+        logo_img = logo_img.scaled(
+            self.ui.logo_frame.size(),
+            uii.QtCore.Qt.AspectRatioMode.IgnoreAspectRatio,
+            uii.QtCore.Qt.TransformationMode.FastTransformation,
+        )
+        self.ui.logo_frame.setPixmap(logo_img)
