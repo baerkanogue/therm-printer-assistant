@@ -27,21 +27,12 @@ ___
 ## Building
 
 ### Dependencies
-#### GUI:
-- packaging
-- pillow
-- PyQt6
-- PyQt6-Qt6
-- PyQt6_sip  
+| Package  | Note             |
+|----------|------------------|
+| Pillow   | Image processing |
+| PyQt6    | GUI              |
+| Colorama | Debug            |
 
-#### TUI:
-- colorama
-
-#### Build:
-- altgraph
-- pyinstaller
-- pyinstaller-hooks-contrib
-- setuptools
 
 #### Linux
 ```bash
