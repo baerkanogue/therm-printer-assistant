@@ -27,57 +27,51 @@ ___
 ## Building
 
 ### Dependencies
-| Package  | Note             |
-|----------|------------------|
-| Pillow   | Image processing |
-| PyQt6    | GUI              |
-| Colorama | Debug            |
+| Package     | Note                    |
+|-------------|-------------------------|
+| Pillow      | Image processing        |
+| PyQt6       | GUI                     |
+| Colorama    | Debug                   |
+| pyinstaller | Compilation (optionnal) |
 
 
-#### Linux
+### Installing dependencies
 ```bash
+# Linux
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-
-#### Windows
-```bash
+```pwsh
+# Windows
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-### Linux
-#### GUI:
+### Compiling
+#### Linux
 ```bash
+# GUI
 pyinstaller --onefile --add-data "samples/sample.jpg:samples" --add-data "icons/printer3d.ico:icons" --add-data "icons/logo.ico:icons" --name "ThermPrinter_Assistant" scripts/gui/main.py
-```
 
-#### TUI:
-```bash
+# TUI
 pyinstaller --onefile --name "ThermPrinter_Assistant_TUI" scripts/tui/main.py     
-```
 
-#### CM -> INCHES CONVERTER:
-```bash
+# Converter
 pyinstaller --onefile --name "cm_inch_converter" scripts/cm_inch_convert.py
 ```
 
 
-### Windows
-#### GUI:
-```powershell
+#### Windows
+```pwsh
+# GUI
 pyinstaller --onefile --noconsole --icon=icons\printer3d.ico --add-data "samples\sample.jpg;samples" --add-data "icons\printer3d.ico;icons" --add-data "icons\logo.ico;icons" --name "ThermPrinter_Assistant" .\scripts\gui\main.py
-```
 
-#### TUI:
-```powershell
+# TUI
 pyinstaller --onefile --icon=icons\printer2d.ico --name "ThermPrinter_Assistant_TUI" .\scripts\tui\main.py     
-```
 
-#### CM -> INCHES CONVERTER:
-```powershell
+# Converter
 pyinstaller --onefile --name "cm_inch_converter" .\scripts\cm_inch_convert.py
 ```
 
